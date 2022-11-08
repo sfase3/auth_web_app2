@@ -1,4 +1,4 @@
-import { Direct } from "~~/interfaces/direct"
+import { Direct } from "~~/interfaces/array"
 
 export const publicList: Array<Direct> = [
     { id: 1, title: 'Home', path: '/' },

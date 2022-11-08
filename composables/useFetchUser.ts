@@ -4,11 +4,9 @@ export function useFetchUser() {
   
   const supabase = useSupabaseClient()
  
-
-
     const signUp = async (mail:string,pass:string,nick:string) => {
       
-        const { data,error } = await supabase.auth.signUp({
+        const { data } = await supabase.auth.signUp({
           email: mail,
           password: pass,
           options: {
@@ -24,7 +22,7 @@ export function useFetchUser() {
       
       const logIn = async(mail:string,pass:string) => {
         localStorage.removeItem('user')
-        const { data,error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
           email: mail,
           password: pass
         })
@@ -34,12 +32,12 @@ export function useFetchUser() {
       }
 
       const logOut = async() => {
-        const { error } = await supabase.auth.signOut()
+        await supabase.auth.signOut()
         navigateTo('/')
       }
 
       const updateVisiter = async(nick:string) => {
-        const { data, error } = await supabase.auth.updateUser({
+        await supabase.auth.updateUser({
           data: { nickname: nick }
         })
        
