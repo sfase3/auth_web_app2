@@ -6,8 +6,8 @@ export interface Direct {
     path: string
 }
 
-export interface UseVal{
+export interface UseValue{
     field: Ref<string>,
-    valid:Ref<boolean>,
-    err_msg:Ref<string>
+    valid: Ref<boolean>,
+    errMsg: Ref<string>
 }

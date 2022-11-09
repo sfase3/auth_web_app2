@@ -1,13 +1,13 @@
 <template>
-<div>
-  <Head>
+  <div>
+    <Head>
       <Title>Auth</Title>
     </Head>
-    <Auth/>
-</div>
+    <AuthForm />
+  </div>
 </template>
 
-<script setup >
+<script setup>
 definePageMeta({
     middleware: ['auth']
   } )

@@ -1,14 +1,16 @@
-<template >
-<div class="wrapper">
-<NuxtLayout>
-<div class="main   flex justify-center items-center bg-gray-200"><NuxtPage/></div>
-</NuxtLayout>
-</div>
+<template>
+  <NuxtLayout>
+    <div class="main flex justify-center items-center bg-gray-200">
+      <NuxtPage />
+    </div>
+  </NuxtLayout>
 </template>
+
 <script setup>
 const user = useSupabaseUser();
 provide('user',user)
 </script>
+
 <style scoped> 
 *{
   overflow-y: hidden;

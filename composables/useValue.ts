@@ -1,10 +1,10 @@
 import {ref} from 'vue'
-import { UseVal } from '~~/interfaces/array';
+import { UseValue } from '~~/utils/interfaces';
 
-export  function useValue(name:string,[...validators]):UseVal{
+export const useValue = (name:string,[...validators]):UseValue => {
     const field = ref(name)
     const valid = ref(true)
-    const err_msg = ref('')
+    const errMsg = ref("")
 
 
     for(let i=0;i<validators.length;i++){
@@ -14,11 +14,11 @@ export  function useValue(name:string,[...validators]):UseVal{
         
         if(bool[0] === false){
             valid.value = false;
-            err_msg.value = bool[1]
+            errMsg.value = bool[1]
         }
     }
     return{
-        field,valid,err_msg
+        field,valid,errMsg
     }
 
 }
