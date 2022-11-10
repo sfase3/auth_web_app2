@@ -13,10 +13,12 @@
 </template>
 
 <script setup>
+definePageMeta({
+    layout: "user",
+})
 const url = "https://jsonplaceholder.typicode.com/users"
-const { data } = await useAsyncData('people',() => $fetch(url))
+const { data } = await useAsyncData("people",() => $fetch(url))
 const {value} = data;
-console.log(useState('isValidPass'))
 </script>
 
 <style>

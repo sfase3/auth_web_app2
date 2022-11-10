@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { Ref } from "vue";
+
 const changeForm:Ref<boolean> = ref(false)
 const Login = resolveComponent("Login");
 const SignUp = resolveComponent("SignUp");

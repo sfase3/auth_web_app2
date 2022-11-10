@@ -1,36 +1,17 @@
-
-
- export const MinLen = val => {
-    if (val.length >= 8){
-        return [true]
-    } else{
-        return [false,"Length is less than 8"]
-    }
+ export const MinLen = field => {
+    return field.length >= 8 ? [true] : [false,"Length is less than 8"]
  }
 
- export const MailCheck = val => {
-    if (val.split('').includes('@')) {
-        return [true]
-    } else{
-        return [false,"It's not a mail"]
-    }
+ export const MailCheck = field => {
+    return field.split("").includes("@") ? [true] : [false,"It's not a mail"]
  }
 
-
- export const MinLen16 = val => {
-    if (val.length >= 16){
-        return [true]
-    } else{
-        return [false,"Length is less than 16"]
-    }
+ export const MinLen16 = field => {
+    return field.length >= 16 ? [true] : [false,"Length is less than 16"]
  }
 
-export const required = val => {
-    if (val.length > 0) {
-        return [true]
-    } else {
-        return [false,"This field is required"]
-    }
+export const required = field => {
+    return field.length > 0 ? [true] : [false,"This field is required"]
 }
 
 

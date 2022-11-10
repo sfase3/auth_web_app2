@@ -6,11 +6,6 @@
   </NuxtLayout>
 </template>
 
-<script setup>
-const user = useSupabaseUser();
-provide('user',user)
-</script>
-
 <style scoped> 
 *{
   overflow-y: hidden;

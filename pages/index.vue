@@ -13,5 +13,20 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: "guest"
+})
+
 const userinfo = useSupabaseUser()
+function setLayout () {
+  return !userinfo.value ? setPageLayout("guest") : setPageLayout("user")
+}
+
+watch(userinfo.value, () => {
+  setLayout()
+})
+
+onMounted(() => {
+  setLayout()
+})
 </script>
