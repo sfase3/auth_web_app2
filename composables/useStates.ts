@@ -1,0 +1,1 @@
+export const baseUser = () => useState<any>("supabaseUser", () => null);

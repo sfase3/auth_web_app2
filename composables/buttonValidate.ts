@@ -7,9 +7,9 @@ export default (logIn: boolean) => {
     const username: Ref<string> = useState<string>("nick",() => "")
     const email: Ref<string> = useState<string>("email",() => "")
     const pass: Ref<string> = useState<string>("valuePass",() => "");
-    const emailIsValid: Ref<boolean> = useState<boolean>("isValid", () => false);
+    const emailIsValid: Ref<boolean> = useState<boolean>("isValid", () => false)
     const emailErr: Ref<string> = useState<string>("error",() => "")
-    const passIsValid: Ref<boolean> = useState<boolean>("isValidPass", () => false);
+    const passIsValid: Ref<boolean> = useState<boolean>("isValidPass", () => false)
     const passErr: Ref<string> = useState<string>("errorPass", () => "")
 
     watch(email, () => {
@@ -26,6 +26,7 @@ export default (logIn: boolean) => {
 
     const checkValid = () => {
     if (!emailIsValid.value || !passIsValid.value) return
+    
     return logIn ? supaDB.logIn(email.value, pass.value) : supaDB.signUp(email.value, pass.value, username.value)
     }
 

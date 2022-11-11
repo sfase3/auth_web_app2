@@ -22,6 +22,6 @@
 
 <script setup lang="ts">
 import { Ref } from "nuxt/dist/app/compat/capi"
-const changeForm:Ref<boolean> = ref(false)
+const changeForm: Ref<boolean> = ref(false)
 const validator = buttonValidate(changeForm.value)
 </script>

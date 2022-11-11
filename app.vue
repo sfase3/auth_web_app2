@@ -17,6 +17,6 @@
 }
 .main{
 flex: 1 1 auto;
-min-height: calc(100vh - 140px);
+min-height: calc(100vh - 136px);
 }
 </style>
